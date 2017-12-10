@@ -1,36 +1,27 @@
 {
-  "title": "Portfolio Item",
-  "name": "startbootstrap-portfolio-item",
-  "version": "4.0.0-beta.2",
-  "description": "A portfolio item HTML template built with Bootstrap",
-  "keywords": [
-    "css",
-    "sass",
-    "html",
-    "responsive",
-    "theme",
-    "template"
-  ],
-  "homepage": "https://startbootstrap.com/template-overviews/portfolio-item",
-  "bugs": {
-    "url": "https://github.com/BlackrockDigital/startbootstrap-portfolio-item/issues",
-    "email": "feedback@startbootstrap.com"
+  "name": "creative-space",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "seed": "node scripts/seedDB.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "yarn && cd client && yarn"
   },
-  "license": "MIT",
-  "author": "Start Bootstrap",
-  "contributors": [
-    "David Miller (http://davidmiller.io/)"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-portfolio-item.git"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-beta.2",
-    "jquery": "^3.2.1"
-  },
-  "devDependencies": {
-    "browser-sync": "2.18.13",
-    "gulp": "^3.9.1"
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7"
   }
 }
