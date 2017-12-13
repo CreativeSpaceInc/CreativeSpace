@@ -6,7 +6,7 @@ class Signup extends Component {
   state = {
     displayname: "",
     username: "",
-    password: "",
+    password: ""
   };
 
   handleInputChange = event => {
@@ -21,8 +21,8 @@ class Signup extends Component {
   };
 
   handleFormSubmit = event => {
-    var displayname = this.state.displayname;
     event.preventDefault();
+    var displayname = this.state.displayname;
     if (this.state.displayname && this.state.username && this.state.password) {
       API.addArtist({
         displayname: this.state.displayname,
@@ -72,7 +72,7 @@ class Signup extends Component {
             className="form-control"
             name="password"/>
         </div>
-            <button type="submit" className="btn btn-primary btn-lg">Sign up</button>
+            <button type="submit" className="btn btn-primary btn-lg" onClick={this.handleFormSubmit} >Sign up</button>
         </form>
         <hr/>
         <p>Already have an account? <a href="/signup">Log in</a></p>
