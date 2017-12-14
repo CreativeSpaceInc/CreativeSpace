@@ -1,9 +1,9 @@
 //routes/api/index.js
 
 const router = require("express").Router();
-const allRoutes = require("./allRoutes");
+const artistRoutes = require("./artists");
 
-// artist routes
-router.use("/allRoutes", allRoutes);
+// Artist routes
+router.use("/artists", artistRoutes);
 
 module.exports = router;

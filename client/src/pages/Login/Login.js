@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import Nav from "../../components/Nav";
 
-class Form extends Component {
+class Login extends Component {
   // Setting the initial values of this.state.username and this.state.password
   state = {
     username: "",
@@ -27,6 +28,8 @@ class Form extends Component {
 
   render() {
     return (
+      <div>
+      < Nav />
       <form>
         <p>Username: {this.state.username}</p>
         <input
@@ -46,8 +49,9 @@ class Form extends Component {
         />
         <button onClick={this.handleFormSubmit}>Submit</button>
       </form>
+      </div>
     );
   }
 }
 
-export default Form;
+export default Login;

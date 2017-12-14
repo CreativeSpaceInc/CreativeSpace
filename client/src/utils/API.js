@@ -1,16 +1,20 @@
 import axios from "axios";
 
 export default {
-  // Gets an artis with the given id
+  // Gets all artists
+  getArtists: function() {
+    return axios.get("/api/artists");
+  },
+  // Gets the artist with the given id
   getArtist: function(id) {
     return axios.get("/api/artists/" + id);
   },
-  // Deletes an artist with the given id
+  // Deletes the artist with the given id
   deleteArtist: function(id) {
     return axios.delete("/api/artists/" + id);
   },
   // Saves an artist to the database
-  addArtist: function(artistData) {
+  saveArtist: function(artistData) {
     return axios.post("/api/artists", artistData);
   }
 };

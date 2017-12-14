@@ -1,5 +1,6 @@
-const db = require("../models");
+// /controllers/artistsController.js
 
+const db = require("../models");
 // Defining methods for the artistsController
 module.exports = {
   findAll: function(req, res) {
