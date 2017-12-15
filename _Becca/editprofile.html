@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CreativeSpace | Edit Profile</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/profile.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/6aa1785c04.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./editprofile.js" type="text/javascript" language="javascript"></script>
+
+  </head>
+
+  <body style="background:#cccccc">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="#" style="width:25px;height:25px"> &emsp;CreativeSpace</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">My profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Log out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Below Navigation Bar Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1><i class="fa fa-pencil-square-o"></i> Edit My Profile &emsp;</h1>
+        </div>
+        <div class="col-md-4">
+          <a href="/profile"><h1><i class="fa fa-eye"></i> View My Profile</h1></a>
+        </div>
+      </div>
+
+      <!-- Profile row-->
+      <div class="row">
+        
+        <!-- Image and details columns -->
+        <div class="col-md-8">
+          <h1 class="my-4">Featured Creation</h1>
+          <!-- <form action="/profile" method="post"> -->
+          <form action="profile.html" method="get">
+          <!-- <form method="post"> -->
+            <div class="form-group">
+              <label>URL of creation you would like <strong style="color:orange">featured</strong> on your profile</label>
+              <input id="input-featured-creation-url" type="text" class="form-control" />
+              <button id="save-featured-creation-url" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>
+            <div class="form-group">
+              <label>Title of creation you would like <strong style="color:orange">featured</strong> on your profile</label>
+              <input id="input-featured-creation-title" type="text" class="form-control" />
+              <button id="save-featured-creation-title" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>            
+            <div class="form-group">
+              <label>Description of creation you would like <strong style="color:orange">featured</strong> on your profile</label>
+              <textarea id="input-featured-creation-description" type="text" class="form-control"></textarea>
+              <button id="save-featured-creation-description" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>
+
+            <!-- Archives -->
+
+            <h3 class="my-4">Archives</h3>
+            <div class="form-group">
+              <label>URL of creation you would like to add your profile <strong style="color:red">(NOT featured)</strong></label>
+              <input id="input-creation-url" type="text" class="form-control" />
+              <button id="save-creation-url" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>
+            <div class="form-group">
+              <label>Title of creation you would like to add to your profile <strong style="color:red">(NOT featured)</strong></label>
+              <input id="input-creation-title" type="text" class="form-control" />
+              <button id="save-creation-title" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>            
+            <div class="form-group">
+              <label>Description of creation you would like to add to your profile <strong style="color:red">(NOT featured)</strong></label>
+              <textarea id="input-creation-description" type="text" class="form-control"></textarea>
+              <button id="save-creation-description" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>            
+          </form>
+        </div>
+        <!-- /.col -->
+
+        <!-- Creator columns -->
+        <div class="col-md-4">
+          <h1 class="my-4">Display Name</h1>
+          <form action="profile.html" method="post">
+            <div class="form-group">
+              <label>Display Name you would like on your profile</label>
+              <input id="input-display-name" type="text" class="form-control" />
+              <button id="save-display-name" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>
+            <div class="form-group">
+              <label>URL of your chosen avatar (will be displayed within 150px by 150px)</label>
+              <input id="input-avatar" type="text" class="form-control" />
+              <button id="save-avatar" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>
+            <h3 class="my-3">Creator Bio</h3>
+            <div class="form-group">
+              <label>Bio you would like displayed on your profile</label>
+              <textarea id="input-bio" type="text" class="form-control"></textarea>
+              <button id="save-bio" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>
+            <h3 class="my-3">Creator Details</h3>
+            <div class="form-group">
+              <label>Username</label>
+              <input id="input-username" type="text" class="form-control" />
+              <button id="save-username" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>
+            <div class="form-group">
+              <label>E-mail address</label>
+              <input id="input-email" type="text" class="form-control" />
+              <button id="save-email" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>
+            <div class="form-group">
+              <label>Title</label>
+              <input id="input-title" type="text" class="form-control" />
+              <button id="save-title" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input id="input-location" type="text" class="form-control" />
+              <button id="save-location" type="submit" class="btn btn-warning btn-block">Save Changes</button>
+            </div>   
+          </form>       
+        </div>
+
+        <!-- /.col -->
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Creative Space Inc. 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+
+
+
+
+  </body>
+
+</html>
