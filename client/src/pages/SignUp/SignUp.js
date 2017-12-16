@@ -43,7 +43,7 @@ class Signup extends Component {
     return (
 
 <div className="container">
-        <Nav />
+        <Nav href={}/>
         <h1><span className="fa fa-user-plus"></span> Sign up</h1>
 
         <form>
