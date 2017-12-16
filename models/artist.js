@@ -5,7 +5,13 @@ const artistSchema = new Schema({
   username: String,
   displayname: String,
   password: String,
-  date: { type: Date, default: Date.now }
+  featured: {
+    type: Schema.Types.ObjectId,
+    ref: "Creation"
+  },
+  date: {
+    type: Date, default: Date.now
+  }
 });
 
 const Artist = mongoose.model("Artist", artistSchema);

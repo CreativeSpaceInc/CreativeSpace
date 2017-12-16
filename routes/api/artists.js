@@ -1,3 +1,4 @@
+//routes/api/artists.js
 const router = require("express").Router();
 const artistsController = require("../../controllers/artistsController");
 

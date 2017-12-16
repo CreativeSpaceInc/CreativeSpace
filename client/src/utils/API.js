@@ -16,5 +16,11 @@ export default {
   // Saves an artist to the database
   saveArtist: function(artistData) {
     return axios.post("/api/artists", artistData);
+  },
+
+  // Save a creation
+  saveCreation: function(creationData) {
+    return axios.post("/api/creations", creationData);
   }
+
 };
