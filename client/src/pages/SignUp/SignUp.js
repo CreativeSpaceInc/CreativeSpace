@@ -1,3 +1,4 @@
+// client/src/pages/Profile/Signup.js
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Nav from "../../components/Nav";
@@ -40,49 +41,50 @@ class Signup extends Component {
 
   render() {
     return (
-//Begin Copy
 
 <div className="container">
         <Nav />
         <h1><span className="fa fa-user-plus"></span> Sign up</h1>
+
         <form>
 
-        <div className="form-group">
-            <label>Username</label>
-            <input
-              value={this.state.username}
-              onChange={this.handleInputChange}
-              type="text"
-              className="form-control"
-              name="username"
-            />
-        </div>
+          <div className="form-group">
+              <label>Username</label>
+              <input
+                value={this.state.username}
+                onChange={this.handleInputChange}
+                type="text"
+                className="form-control"
+                name="username"
+              />
+          </div>
 
-        <div className="form-group">
-            <label>Display Name</label>
-            <input
-              value={this.state.displayname}
-              onChange={this.handleInputChange}
-              type="text"
-              className="form-control"
-              name="displayname"
-            />
+          <div className="form-group">
+              <label>Display Name</label>
+              <input
+                value={this.state.displayname}
+                onChange={this.handleInputChange}
+                type="text"
+                className="form-control"
+                name="displayname"
+              />
 
-        </div>
+          </div>
 
-        <div className="form-group">
-            <label>Password</label>
-            <input type="password"
-              value={this.state.password}
-              onChange={this.handleInputChange}
-              className="form-control"
-              name="password"
-            />
-        </div>
+          <div className="form-group">
+              <label>Password</label>
+              <input type="password"
+                value={this.state.password}
+                onChange={this.handleInputChange}
+                className="form-control"
+                name="password"
+              />
+          </div>
 
-            <button type="submit"
-            className="btn btn-primary btn-lg" onClick={this.handleFormSubmit}>Sign up
-            </button>
+              <button
+              type="submit"
+              className="btn btn-primary btn-lg" onClick={this.handleFormSubmit}>Sign up
+              </button>
 
         </form>
         <hr/>
