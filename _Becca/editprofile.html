@@ -39,21 +39,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="index.html">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Search</a>
+              <a class="nav-link" href="index.html">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">My profile</a>
+              <a class="nav-link" href="profile.html">My profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Log out</a>
+              <a class="nav-link" href="login.html">Log out</a>
             </li>
           </ul>
         </div>
@@ -61,26 +61,29 @@
     </nav>
 
     <!-- Below Navigation Bar Content -->
+    <br><br>
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <h1><i class="fa fa-pencil-square-o"></i> Edit My Profile &emsp;</h1>
+          <h2 style="text-decoration: underline;"><i class="fa fa-pencil-square-o" ></i>Edit My Profile</h2>
         </div>
         <div class="col-md-4">
-          <a href="/profile"><h1><i class="fa fa-eye"></i> View My Profile</h1></a>
+          <a href="/profile"><h2><i class="fa fa-eye"></i> View My Profile</h2></a>
         </div>
-      </div>
+      </div> <hr>
 
       <!-- Profile row-->
       <div class="row">
         
         <!-- Image and details columns -->
         <div class="col-md-8">
-          <h1 class="my-4">Featured Creation</h1>
-          <!-- <form action="/profile" method="post"> -->
-          <form action="profile.html" method="get">
+        <!--Featured Art -->
+
+        <!--   <h1 class="my-4">Featured Creation</h1> -->
+          
+         <!--  <form action="profile.html" method="get" id="featured-background" > -->
           <!-- <form method="post"> -->
-            <div class="form-group">
+            <!-- <div class="form-group" id="featured-background">
               <label>URL of creation you would like <strong style="color:orange">featured</strong> on your profile</label>
               <input id="input-featured-creation-url" type="text" class="form-control" />
               <button id="save-featured-creation-url" type="submit" class="btn btn-warning btn-block">Save Changes</button>
@@ -94,11 +97,12 @@
               <label>Description of creation you would like <strong style="color:orange">featured</strong> on your profile</label>
               <textarea id="input-featured-creation-description" type="text" class="form-control"></textarea>
               <button id="save-featured-creation-description" type="submit" class="btn btn-warning btn-block">Save Changes</button>
-            </div>
-
+            </div></form> -->
+        
             <!-- Archives -->
 
             <h3 class="my-4">Archives</h3>
+            <form action="profile.html" method="get" id="archives-background">
             <div class="form-group">
               <label>URL of creation you would like to add your profile <strong style="color:red">(NOT featured)</strong></label>
               <input id="input-creation-url" type="text" class="form-control" />
@@ -115,12 +119,12 @@
               <button id="save-creation-description" type="submit" class="btn btn-warning btn-block">Save Changes</button>
             </div>            
           </form>
-        </div>
+        </div> 
         <!-- /.col -->
 
         <!-- Creator columns -->
         <div class="col-md-4">
-          <h1 class="my-4">Display Name</h1>
+          <h3 class="my-4">Creator Details</h3>
           <form action="profile.html" method="post">
             <div class="form-group">
               <label>Display Name you would like on your profile</label>
@@ -132,13 +136,16 @@
               <input id="input-avatar" type="text" class="form-control" />
               <button id="save-avatar" type="submit" class="btn btn-warning btn-block">Save Changes</button>
             </div>
-            <h3 class="my-3">Creator Bio</h3>
+            
             <div class="form-group">
               <label>Bio you would like displayed on your profile</label>
               <textarea id="input-bio" type="text" class="form-control"></textarea>
               <button id="save-bio" type="submit" class="btn btn-warning btn-block">Save Changes</button>
-            </div>
-            <h3 class="my-3">Creator Details</h3>
+            </div></form> </div>
+
+        <div class="col-md-8">
+            <h3 class="my-3">Account Details</h3>
+             <form action="profile.html" method="post" id="featured-background">
             <div class="form-group">
               <label>Username</label>
               <input id="input-username" type="text" class="form-control" />
@@ -168,7 +175,7 @@
       <!-- /.row -->
 
     </div>
-
+<br><br>
     <!-- /.container -->
 
     <!-- Footer -->
