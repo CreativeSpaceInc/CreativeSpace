@@ -1,7 +1,7 @@
 // client/src/pages/Profile/Profile.js
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Nav from "../../components/Nav";
+import { Nav, NavLi } from "../../components/Nav";
 import DisplayMessage from "../../components/DisplayMessage";
 // import { Link } from "react-router-dom";
 import { Input, TextArea, FormBtn, FormDiv } from "../../components/Form";
@@ -58,7 +58,12 @@ class Upload extends Component {
   render() {
     return (
       <Container>
-        <Nav />
+        <Nav>
+          <NavLi>Home</NavLi>
+          <NavLi>About</NavLi>
+          <NavLi>My profile</NavLi>
+          <NavLi>Log out</NavLi>                    
+        </Nav>
         <h1 className="my-4"><i className="fa fa-picture-o"></i> Upload Your Creation</h1>
         <DisplayMessage 
           value={this.state.message}

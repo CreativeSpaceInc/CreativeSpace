@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from "../../components/Nav";
+import { Nav, NavLi } from "../../components/Nav";
 
 class Login extends Component {
   // Setting the initial values of this.state.username and this.state.password

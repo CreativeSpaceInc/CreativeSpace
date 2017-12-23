@@ -1,7 +1,7 @@
 // client/src/pages/Profile/Signup.js
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Nav from "../../components/Nav";
+import { Nav, NavLi } from "../../components/Nav";
 // import { Link } from "react-router-dom";
 
 class Signup extends Component {
