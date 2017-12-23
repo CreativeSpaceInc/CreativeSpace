@@ -1,6 +1,8 @@
 import React from "react";
 
 export const FormBtn = props =>
-  <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
-    {props.children}
+  <button  
+  	className="btn btn-block my-4"
+  	type="submit"
+  	{...props}>Save Changes
   </button>;
