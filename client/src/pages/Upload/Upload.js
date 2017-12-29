@@ -4,7 +4,7 @@ import API from "../../utils/API";
 import { Nav, NavLi } from "../../components/Nav";
 import DisplayMessage from "../../components/DisplayMessage";
 // import { Link } from "react-router-dom";
-import { Input, TextArea, FormBtn, FormDiv } from "../../components/Form";
+import { FormBtn, FormDiv, Input, TextArea } from "../../components/Form";
 import { Col, Container, Row } from "../../components/Grid";
 import "./Upload.css";
 
@@ -16,28 +16,24 @@ class Upload extends Component {
     artist: "5a34a9d1afaabc1820db0b32",
     message: ""
   };
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   };
-
   successMessage = () => {
     this.setState({ 
       message: 'Success! Your creation has been saved.',
       className: "success" 
     });
   };
-
   failMessage = () => {
     this.setState({
       message: '* Please indicate a url and title',
       className: "danger"
     });
   };
-
   handleFormSubmit = event => {
     event.preventDefault();
     console.log('the button was clicked');
@@ -73,40 +69,39 @@ class Upload extends Component {
         </DisplayMessage>
         <form>
           <FormDiv>
-              <label>URL of creation you would like to add your profile</label>
-              <Input
-                value={this.state.url}
-                onChange={this.handleInputChange}
-                id="input-creation-url"
-                name="url"
-                placeholder="URL"
-              />
+            <label>URL of creation you would like to add your profile</label>
+            <Input
+              value={this.state.url}
+              onChange={this.handleInputChange}
+              id="input-creation-url"
+              name="url"
+              placeholder="URL"
+            />
           </FormDiv>
           <FormDiv>
-              <label>Title of creation you would like to add to your profile</label>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                id="input-creation-title"
-                name="title"
-                placeholder="Title"
-              />
+            <label>Title of creation you would like to add to your profile</label>
+            <Input
+              value={this.state.title}
+              onChange={this.handleInputChange}
+              id="input-creation-title"
+              name="title"
+              placeholder="Title"
+            />
           </FormDiv>
           <FormDiv>
-              <label>Description of creation you would like to add to your profile</label>
-              <TextArea
-                value={this.state.description}
-                onChange={this.handleInputChange}
-                id="input-creation-description"
-                name="description"
-                placeholder="Description"
-                >
-              </TextArea>
-              <FormBtn
-                id="save-creation-description"
-                onClick={this.handleFormSubmit}>
-              </FormBtn>
+            <label>Description of creation you would like to add to your profile</label>
+            <TextArea
+              value={this.state.description}
+              onChange={this.handleInputChange}
+              id="input-creation-description"
+              name="description"
+              placeholder="Description"
+            />
           </FormDiv>
+            <FormBtn
+              id="save-creation"
+              onClick={this.handleFormSubmit}>Save Creation
+            </FormBtn>
         </form>
       </Container>
     );
