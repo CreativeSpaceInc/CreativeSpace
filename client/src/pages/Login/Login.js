@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Nav, NavLi } from "../../components/Nav";
+import { Col, Container, Row } from "../../components/Grid";
+import { FormBtn, FormDiv, Input } from "../../components/Form";
 
 class Login extends Component {
   // Setting the initial values of this.state.username and this.state.password
@@ -7,18 +9,15 @@ class Login extends Component {
     username: "",
     password: ""
   };
-
   // handle any changes to the input fields
   handleInputChange = event => {
     // Pull the name and value properties off of the event.target (the element which triggered the event)
     const { name, value } = event.target;
-
     // Set the state for the appropriate input field
     this.setState({
       [name]: value
     });
   };
-
   // When the form is submitted, prevent the default event and alert the username and password
   handleFormSubmit = event => {
     event.preventDefault();
@@ -28,28 +27,42 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-      < Nav />
+      <Container>
+      <Nav>
+          <NavLi>Home</NavLi>
+          <NavLi>About</NavLi>
+          <NavLi>My profile</NavLi>
+          <NavLi>Sign up</NavLi> 
+      </Nav>
       <form>
-        <p>Username: {this.state.username}</p>
-        <input
-          type="text"
-          placeholder="Username"
-          name="username"
-          value={this.state.username}
-          onChange={this.handleInputChange}
-        />
-        <p>Password: {this.state.password}</p>
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handleInputChange}
-        />
-        <button onClick={this.handleFormSubmit}>Submit</button>
+        <h1 className="my-4"><i class="fa fa-sign-in"></i> Log in</h1>
+        <FormDiv>
+          <label>Username: {this.state.username}</label>
+          <Input
+            placeholder="Username"
+            name="username"
+            value={this.state.username}
+            onChange={this.handleInputChange}
+          />
+        </FormDiv>
+        <FormDiv>
+          <label>Password: {this.state.password}</label>
+          <Input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={this.state.password}
+            onChange={this.handleInputChange}
+          />
+        </FormDiv>
+        <FormBtn 
+          onClick={this.handleFormSubmit}>Log in
+        </FormBtn>
       </form>
-      </div>
+      <hr />
+      <p>Don't have an account? <a href="/">Sign up</a></p>
+      <p>Or click <a href="/home">Home</a></p>
+      </Container>
     );
   }
 }
