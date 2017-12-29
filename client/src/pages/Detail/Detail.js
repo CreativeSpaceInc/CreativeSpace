@@ -8,17 +8,16 @@ class Detail extends Component {
   state = {
     artist: {}
   };
-  // When this component mounts, grab the artist with the _id of this.props.match.params.id
+  // When component did mount, grab the artist with the _id of this.props.match.params.id
   // e.g. localhost:3000/artists/599dcb67f0f16317844583fc
   componentDidMount() {
     API.getArtist(this.props.match.params.id)
       .then(res => this.setState({ artist: res.data }))
       .catch(err => console.log(err));
   }
-
   render() {
     return (
-      <Container fluid>
+      <Container>
         <Row>
           <Col size="md-12">
             <Jumbotron>
@@ -29,7 +28,7 @@ class Detail extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
+          <Col size="md-12">
             <article>
               <h1>Password</h1>
               <p>
@@ -40,12 +39,11 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Home </Link>
+            <Link to="/home">← Home </Link>
           </Col>
         </Row>
       </Container>
     );
   }
 }
-
 export default Detail;
