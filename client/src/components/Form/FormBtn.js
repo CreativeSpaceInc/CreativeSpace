@@ -4,5 +4,5 @@ export const FormBtn = props =>
   <button  
   	className="btn btn-block my-4"
   	type="submit"
-  	{...props}>Save Changes
+  	{...props}>{props.children}
   </button>;
