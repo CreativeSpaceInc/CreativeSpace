@@ -1,35 +1,34 @@
 // client/src/pages/Profile/Signup.js
 import React, { Component } from "react";
 import API from "../../utils/API";
+import { Container } from "../../components/Grid";
 import { Nav, NavLi } from "../../components/Nav";
+import { FormBtn, FormDiv, Input, TextArea } from "../../components/Form";
 // import { Link } from "react-router-dom";
 
 class Signup extends Component {
   state = {
-    username: "",
     displayname: "",
+    username: "",
     password: ""
   };
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   };
-
   displayMessage = (displayname) => {
     alert(`Welcome ${displayname} to CreativeSpace.`)
   };
-
   handleFormSubmit = event => {
     event.preventDefault();
     console.log('the button was clicked');
     var displayname = this.state.displayname;
     if (this.state.displayname && this.state.username && this.state.password) {
       API.saveArtist({
-        username: this.state.username,
         displayname: this.state.displayname,
+        username: this.state.username,
         password: this.state.password
       })
         .then(res => this.displayMessage(displayname))
@@ -41,59 +40,51 @@ class Signup extends Component {
 
   render() {
     return (
-
-<div className="container">
-        <Nav />
-        <h1><span className="fa fa-user-plus"></span> Sign up</h1>
-
+      <Container>
+        <Nav>
+          <NavLi>Home</NavLi>
+          <NavLi>About</NavLi>
+          <NavLi>My profile</NavLi>
+          <NavLi>Log in</NavLi> 
+        </Nav>
+        <h1 className="my-4"><span className="fa fa-user-plus"></span> Sign up</h1>
         <form>
-
-          <div className="form-group">
-              <label>Username</label>
-              <input
-                value={this.state.username}
-                onChange={this.handleInputChange}
-                type="text"
-                className="form-control"
-                name="username"
-              />
-          </div>
-
-          <div className="form-group">
-              <label>Display Name</label>
-              <input
-                value={this.state.displayname}
-                onChange={this.handleInputChange}
-                type="text"
-                className="form-control"
-                name="displayname"
-              />
-
-          </div>
-
-          <div className="form-group">
-              <label>Password</label>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                className="form-control"
-                name="password"
-              />
-          </div>
-
-              <button
-              type="submit"
-              className="btn btn-primary btn-lg" onClick={this.handleFormSubmit}>Sign up
-              </button>
-
+          <FormDiv>
+            <label>Display Name</label>
+            <Input
+              value={this.state.displayname}
+              onChange={this.handleInputChange}
+              placeholder="Display name"
+              name="displayname"
+            />
+          </FormDiv>
+          <FormDiv>
+            <label>Username</label>
+            <Input
+              value={this.state.username}
+              onChange={this.handleInputChange}
+              placeholder="Username"
+              name="username"
+            />
+          </FormDiv>
+          <FormDiv>
+            <label>Password</label>
+            <Input 
+              type="password"
+              value={this.state.password}
+              onChange={this.handleInputChange}
+              placeholder="Password"
+              name="password"
+            />
+          </FormDiv>
+            <FormBtn
+              onClick={this.handleFormSubmit}>Sign up
+            </FormBtn>
         </form>
         <hr/>
         <p>Already have an account? <a href="/">Log in</a></p>
-        <p>Or click <a href="/">Home</a></p>
-
-
-</div>
-
+        <p>Or click <a href="/home">Home</a></p>
+    </Container>
     );
   }
 }
