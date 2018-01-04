@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Container } from "../../components/Grid";
 import { Nav, NavLi } from "../../components/Nav";
-import { FormBtn, FormDiv, Input, TextArea } from "../../components/Form";
+import { FormBtn, FormDiv, Input } from "../../components/Form";
 // import { Link } from "react-router-dom";
 
 class Signup extends Component {
@@ -77,14 +77,14 @@ class Signup extends Component {
               name="password"
             />
           </FormDiv>
-            <FormBtn
-              onClick={this.handleFormSubmit}>Sign up
-            </FormBtn>
+          <FormBtn
+            onClick={this.handleFormSubmit}>Sign up
+          </FormBtn>
         </form>
         <hr/>
         <p>Already have an account? <a href="/">Log in</a></p>
         <p>Or click <a href="/home">Home</a></p>
-    </Container>
+      </Container>
     );
   }
 }
