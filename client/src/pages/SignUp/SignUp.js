@@ -13,9 +13,9 @@ class Signup extends Component {
     password: ""
   };
 
-  this.handleInputChange = this.handleInputChange.bind(this);
-  this.getArtistId = this.getArtistId.bind(this);
-  this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  // this.handleInputChange = this.handleInputChange.bind(this);
+  // this.getArtistId = this.getArtistId.bind(this);
+  // this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
   handleInputChange = event => {
     const { name, value } = event.target;
