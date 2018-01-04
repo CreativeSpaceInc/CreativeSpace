@@ -1,23 +1,28 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Signup from "./pages/SignUp";
-import Upload from "./pages/Upload";
+import Detail from "./pages/Detail";
+import Editprofile from "./pages/Editprofile";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
+import Profile from "./pages/Profile";
+import Signup from "./pages/SignUp";
+import Upload from "./pages/Upload";
 // import Artists from "./pages/Artists";
-import Detail from "./pages/Detail";
 
 import Footer from "./components/Footer";
-import Nav from "./components/Nav";
 
 const App = () =>
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/signup" component={Signup} />
         <Route exact path="/artists/:id" component={Detail} />
+        <Route exact path="/detail" component={Detail} />
+        <Route exact path="/editprofile" component={Editprofile} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/nomatch" component={NoMatch} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/signup" component={Signup} />
         <Route exact path="/upload" component={Upload} />
         <Route component={NoMatch} />
       </Switch>
