@@ -1,9 +1,9 @@
 // client/src/pages/Profile/Profile.js
 import React, { Component } from "react";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 // import { Link } from "react-router-dom";
-import { ArchImg } from "../../components/Archives";
-import { CarA, CarDiv, CarImg, CarItem, CarLi } from "../../components/Carousel";
+// import { ArchImg } from "../../components/Archives";
+// import { CarA, CarDiv, CarImg, CarItem, CarLi } from "../../components/Carousel";
 import { FormBtn, FormDiv, Input, TextArea } from "../../components/Form";
 import { Col, Container, Row } from "../../components/Grid";
 import { Nav, NavLi } from "../../components/Nav";
@@ -21,7 +21,7 @@ class Editprofile extends Component {
           <NavLi>About</NavLi>
           <NavLi>Search</NavLi>
           <NavLi>Profile</NavLi>
-          <NavLi>Log out</NavLi>                    
+          <NavLi>Log out</NavLi>
         </Nav>
         <Row>
           <Col size="md-8">
@@ -37,45 +37,45 @@ class Editprofile extends Component {
             <form action="profile.html" method="get" id="archives-background">
               <FormDiv>
                 <label>URL of creation you would like to add your profile <strong style={{color:"red"}}>(NOT featured)</strong></label>
-                <Input 
+                <Input
                   id="input-creation-url" />
                 <FormBtn
-                  id="save-creation-url" 
+                  id="save-creation-url"
                   style={{backgroundColor:"orange"}}>Save Changes</FormBtn>
               </FormDiv>
               <FormDiv>
                 <label>Title of creation you would like to add to your profile <strong style={{color:"red"}}>(NOT featured)</strong></label>
-                <Input 
+                <Input
                   id="input-creation-title" />
                 <FormBtn
-                  id="save-creation-title" 
+                  id="save-creation-title"
                   style={{backgroundColor:"orange"}}>Save Changes</FormBtn>
-              </FormDiv>            
+              </FormDiv>
               <FormDiv>
                 <label>Description of creation you would like to add to your profile <strong style={{color:"red"}}>(NOT featured)</strong></label>
-                <TextArea 
+                <TextArea
                   id="input-creation-description"
                   type="text" />
                 <FormBtn
-                  id="save-creation-description" 
+                  id="save-creation-description"
                   style={{backgroundColor:"orange"}}>Save Changes</FormBtn>
-              </FormDiv>            
+              </FormDiv>
             </form>
-          </Col> 
+          </Col>
           <Col size="md-4">
             <h3 className="my-4">Creator Details</h3>
             <form action="profile.html" method="post">
               <FormDiv>
                 <label>Display Name you would like on your profile</label>
-                <Input 
+                <Input
                   id="input-display-name" />
-                <FormBtn 
+                <FormBtn
                   id="save-display-name"
                   style={{backgroundColor:"orange"}}>Save Changes</FormBtn>
               </FormDiv>
               <FormDiv>
                 <label>URL of your chosen avatar (will be displayed within 150px by 150px)</label>
-                <Input 
+                <Input
                   id="input-avatar" />
                 <FormBtn
                   id="save-avatar"
@@ -83,23 +83,23 @@ class Editprofile extends Component {
               </FormDiv>
               <FormDiv>
                 <label>Bio you would like displayed on your profile</label>
-                <TextArea 
-                  id="input-bio" 
+                <TextArea
+                  id="input-bio"
                   type="text" />
-                <FormBtn 
+                <FormBtn
                   id="save-bio"
                   style={{backgroundColor:"orange"}}>Save Changes</FormBtn>
               </FormDiv>
-            </form> 
+            </form>
           </Col>
           <Col size="md-8">
               <h3 className="my-3">Account Details</h3>
               <form action="profile.html" method="post" id="featured-background">
               <FormDiv>
                 <label>Username</label>
-                <Input 
+                <Input
                   id="input-username" />
-                <FormBtn 
+                <FormBtn
                   id="save-username"
                   style={{backgroundColor:"orange"}}>Save Changes</FormBtn>
               </FormDiv>
@@ -119,13 +119,13 @@ class Editprofile extends Component {
               </FormDiv>
               <FormDiv>
                 <label>Location</label>
-                <Input 
+                <Input
                   id="input-location" />
                 <FormBtn
                   id="save-location"
                   style={{backgroundColor:"orange"}}>Save Changes</FormBtn>
-              </FormDiv>   
-            </form>       
+              </FormDiv>
+            </form>
           </Col>
         </Row>
     </Container>

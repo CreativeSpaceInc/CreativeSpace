@@ -1,49 +1,71 @@
-// config.passport.js
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const User = require('../models/artist');
 
-    passport.serializeUser(function(user, done) {
-        done(null, user.id);
-    });
+const Artist = require('../models/artist');
 
-    // used to deserialize the user
-    passport.deserializeUser(function(id, done) {
-        User.findById(id, function(err, user) {
-            done(err, user);
-        });
-    });
+passport.serializeUser(function(artist, done){
+  done(null, artist.id);
+});
 
+passport.deserializeUser(function(id, done){
+  Artist.findById(id, function(err, artist){
+    done(err, artist);
+  });
+});
 
+// SIGNUP
+passport.use('local.signup', new LocalStrategy({
+  usernameField: 'username',
+  passwordField: 'password',
+  passReqToCallback: true
+}, function(req, username, password, done){
 
+    Artist.findOne({'username': username}, function(err, artist){
+      if(err){
+        return done(err);
+      }
 
-    // LOCAL SIGNUP
-    passport.use('local-signup', new LocalStrategy({
-        usernameField: 'username',
-        passwordField: 'password',
-        passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
-        },
-        function(req, username, password, done) {
-          User.findOne({ 'username': username }, function(err, user){
-            if(err){
-              return done(err);
-            }
+      if(artist){
+        return done(null, false);
+      }
 
-            if(user){
-              return done(null, false);
-            }
+      var newArtist = new Artist();
+      newArtist.username = req.body.username;
+      newArtist.displayname = req.body.displayname;
+      newArtist.password = newArtist.encryptPassword(req.body.password);
 
-            var newUser = new User();
-            newUser.username = req.body.username;
-            newUser.displayname = req.body.displayname;
-            newUser.password = newUser.encryptPassword(req.body.password);
+      newArtist.save(function(err){
+        if(err){
+          return done(err);
+        }
 
-            newUser.save(function(err){
-              if(err){
-                return done(err);
-              }
+        return done(null, newArtist);
+      })
+    })
+}));
 
-              return done(null, newUser);
-            })
-          })
-        }));
+// LOGIN
+passport.use('local.login', new LocalStrategy({
+  usernameField: 'username',
+  passwordField: 'password',
+  passReqToCallback: true
+}, function(req, username, password, done){
+    Artist.findOne({'username': username}, function(err, artist){
+      if(err){
+        return done(err);
+      }
+
+      if(!artist){
+        console.log('Artist not found.');
+        return done(null, false);
+      }
+
+      if(!artist.validPassword(req.body.password)){
+        console.log('Login failed.');
+        return done(null, false);
+      };
+
+      return done(null, artist);
+
+    })
+}));

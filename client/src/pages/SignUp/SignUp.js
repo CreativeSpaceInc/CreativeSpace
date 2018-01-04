@@ -12,26 +12,36 @@ class Signup extends Component {
     username: "",
     password: ""
   };
+
+  this.handleInputChange = this.handleInputChange.bind(this);
+  this.getArtistId = this.getArtistId.bind(this);
+  this.handleFormSubmit = this.handleFormSubmit.bind(this);
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   };
-  displayMessage = (displayname) => {
-    alert(`Welcome ${displayname} to CreativeSpace.`)
+
+  getArtistId = (username) => {
+    console.log(username);
+    API.getArtistId(username)
+    .then(res => this.setState({ id: res.data._id }))
+    // .then(res => console.log(`The id is ${res.data._id}`))
+    .then(console.log(`The state.id is ${this.state.id}`))
+    .catch(err => console.log(err));
   };
+
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log('the button was clicked');
-    var displayname = this.state.displayname;
     if (this.state.displayname && this.state.username && this.state.password) {
       API.saveArtist({
-        displayname: this.state.displayname,
         username: this.state.username,
+        displayname: this.state.displayname,
         password: this.state.password
       })
-        .then(res => this.displayMessage(displayname))
+        .then(res => this.getArtistId(this.state.username))
         .catch(err => console.log(err));
     } else {
       alert('All fields are required.')
@@ -45,7 +55,7 @@ class Signup extends Component {
           <NavLi>Home</NavLi>
           <NavLi>About</NavLi>
           <NavLi>My profile</NavLi>
-          <NavLi>Log in</NavLi> 
+          <NavLi>Log in</NavLi>
         </Nav>
         <h1 className="my-4"><span className="fa fa-user-plus"></span> Sign up</h1>
         <form>
@@ -69,7 +79,7 @@ class Signup extends Component {
           </FormDiv>
           <FormDiv>
             <label>Password</label>
-            <Input 
+            <Input
               type="password"
               value={this.state.password}
               onChange={this.handleInputChange}
@@ -82,7 +92,7 @@ class Signup extends Component {
           </FormBtn>
         </form>
         <hr/>
-        <p>Already have an account? <a href="/">Log in</a></p>
+        <p>Already have an account? <a href="/login">Log in</a></p>
         <p>Or click <a href="/home">Home</a></p>
       </Container>
     );

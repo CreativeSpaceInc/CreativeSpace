@@ -19,7 +19,7 @@ class Profile extends Component {
           <NavLi>About</NavLi>
           <NavLi>Search</NavLi>
           <NavLi>Edit profile</NavLi>
-          <NavLi>Log out</NavLi>                    
+          <NavLi>Log out</NavLi>
         </Nav>
         <Row>
           <Col size="md-8">
@@ -40,32 +40,32 @@ class Profile extends Component {
               </ol>
               <CarDiv>
                 <CarItem className="active">
-                  <CarImg 
-                    src="http://placehold.it/900x350" 
+                  <CarImg
+                    src="http://placehold.it/900x350"
                     alt="First slide">
                   </CarImg>
                 </CarItem>
                 <CarItem>
-                  <CarImg 
-                    src="http://placehold.it/900x350" 
+                  <CarImg
+                    src="http://placehold.it/900x350"
                     alt="Second slide">
                   </CarImg>
                 </CarItem>
                 <CarItem>
-                  <CarImg 
-                    src="http://placehold.it/900x350" 
+                  <CarImg
+                    src="http://placehold.it/900x350"
                     alt="Third slide">
                   </CarImg>
                 </CarItem>
               </CarDiv>
-              <CarA 
-                className="carousel-control-prev" 
+              <CarA
+                className="carousel-control-prev"
                 data-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="sr-only">Previous</span>
               </CarA>
-              <CarA 
-                className="carousel-control-next" 
+              <CarA
+                className="carousel-control-next"
                 data-slide="next">
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="sr-only">Next</span>
@@ -75,7 +75,7 @@ class Profile extends Component {
               <tbody>
               <tr>
                 <td style={{paddingBottom:"15px",paddingRight:"15px",borderRight:"2px solid gray"}}>Title</td>
-                <td id="featured-creation-title" style={{paddingBottom:"15px",paddingLeft:"15px"}}><a href="#">Creation Title</a></td>
+                <td id="featured-creation-title" style={{paddingBottom:"15px",paddingLeft:"15px"}}><a href="/">Creation Title</a></td>
               </tr>
               <tr>
                 <td style={{verticalAlign:"top",paddingRight:"15px",borderRight:"2px solid gray",marginBottom:"15px"}}>Description</td>
@@ -98,7 +98,7 @@ class Profile extends Component {
               </tr>
               <tr>
                 <td style={{paddingRight:"15px",borderRight:"2px solid gray"}}>E-mail</td>
-                <td id="email" style={{paddingLeft:"15px"}}><a href="#">email@gmail.com</a></td>
+                <td id="email" style={{paddingLeft:"15px"}}><a href="/">email@gmail.com</a></td>
               </tr>
               <tr>
                 <td style={{paddingRight:"15px",borderRight:"2px solid gray"}}>Detail</td>
@@ -115,34 +115,34 @@ class Profile extends Component {
         <h3 className="my-4">Archives</h3>
         <Row>
           <Col size="sm-6 md-3" className="mb-4" name="1">
-            <a href="#">
+            <a href="/">
               <ArchImg
-                src="http://placehold.it/500x300" 
+                src="http://placehold.it/500x300"
                 name="1">
               </ArchImg>
               <p>Creation Title</p>
             </a>
           </Col>
           <Col size="sm-6 md-3" className="mb-4" name="2">
-            <a href="#">
+            <a href="/">
               <ArchImg
-                src="http://placehold.it/500x300" 
+                src="http://placehold.it/500x300"
                 name="2" />
               <p>Creation Title</p>
             </a>
           </Col>
           <Col size="sm-6 md-3" className="mb-4" name="3">
-            <a href="#">
+            <a href="/">
               <ArchImg
-                src="http://placehold.it/500x300" 
+                src="http://placehold.it/500x300"
                 name="3" />
               <p>Creation Title</p>
             </a>
           </Col>
           <Col size="sm-6 md-3" className="mb-4" name="4">
-            <a href="#">
+            <a href="/">
               <ArchImg
-                src="http://placehold.it/500x300" 
+                src="http://placehold.it/500x300"
                 name="4" />
               <p>Creation Title</p>
             </a>

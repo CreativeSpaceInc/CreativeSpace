@@ -20,5 +20,5 @@ var CreationSchema = new Schema({
 // This creates our model from the above schema, using mongoose's model method
 var Creation = mongoose.model("Creation", CreationSchema);
 
-// Export the Note model
+// Export the creation model
 module.exports = Creation;

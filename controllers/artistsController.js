@@ -16,6 +16,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  getId: function(req, res) {
+    db.Artist
+      .findOne({username: req.params.username })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     db.Artist
       .create(req.body)
