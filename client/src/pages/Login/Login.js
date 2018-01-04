@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Nav, NavLi } from "../../components/Nav";
-import { Col, Container, Row } from "../../components/Grid";
+import { Container } from "../../components/Grid";
 import { FormBtn, FormDiv, Input } from "../../components/Form";
 
 class Login extends Component {
