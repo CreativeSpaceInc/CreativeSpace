@@ -5,7 +5,7 @@ import { Nav, NavLi } from "../../components/Nav";
 import DisplayMessage from "../../components/DisplayMessage";
 // import { Link } from "react-router-dom";
 import { FormBtn, FormDiv, Input, TextArea } from "../../components/Form";
-import { Col, Container, Row } from "../../components/Grid";
+import { Container } from "../../components/Grid";
 import "./Upload.css";
 
 class Upload extends Component {
