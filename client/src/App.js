@@ -8,6 +8,7 @@ import NoMatch from "./pages/NoMatch";
 import Profile from "./pages/Profile";
 import Signup from "./pages/SignUp";
 import Upload from "./pages/Upload";
+import Home from "./pages/Home";
 // import Artists from "./pages/Artists";
 
 import Footer from "./components/Footer";
@@ -16,6 +17,7 @@ const App = () =>
   <Router>
     <div>
       <Switch>
+        <Route exact path="/" component={Home} />
         <Route exact path="/artists/:id" component={Detail} />
         <Route exact path="/detail" component={Detail} />
         <Route exact path="/editprofile" component={Editprofile} />
